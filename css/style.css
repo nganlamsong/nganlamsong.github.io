@@ -1,0 +1,241 @@
+/* see this cool font? it's a magic trick. */
+@font-face {
+  font-family: 'NotoSans';
+  src: url("https://vega-spica.github.io/Personality-Sneak-Peek-Expanded/fonts/Noto%20Sans%20CJK%20KR%20Bold.ttf") format("truetype");
+}
+
+/*
+and now that you have the cool font, i can force you to use it!
+	unless your device doesn't support it. then you get boring font.
+		that would be sad, wouldn't it?
+*/
+body {
+  font-family: 'NotoSans',sans-serif;
+  text-shadow:2px 2px 4px black;
+  letter-spacing: 0.px;
+  background-color: rgba(47,34,26,1.0);
+  background-image: url("https://vega-spica.github.io/Personality-Sneak-Peek-Expanded/img/Background.png");
+  background-size: 100%;
+}
+
+a { 
+    color: skyblue;
+}
+
+a:link, a:visited {
+    color: skyblue;
+}
+
+a:hover {
+    color: #dd4343;
+	cursor: pointer;
+}
+
+/* hic sunt dracones */
+.spineCanvas {
+    width: 450%;
+    height: 400%;
+    position: absolute;
+    transform: translate(-50%, -15%);
+}
+
+.auraBackCanvas {
+    z-index: -1;
+}
+
+.dragonCanvas {s
+    z-index: 0;
+}
+
+/* frame. FRAME!!! */
+#dragon-image {
+    position: absolute;
+	width: 20%;
+    transform: translate(172%, -83%);
+	z-index: 0;
+}
+
+.auraFrontCanvas {
+    z-index: 1;
+}
+
+/* why is everything such a pain to center?!? */
+.flex-container{
+	color: #c0cc83;
+    text-align: center;
+	font-size: 15px;
+	line-height: 20px;
+	position: relative;
+	z-index: 2;
+	padding-top: 110px;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  height:250px;
+}
+
+.grid-item {
+    position:relative;
+    text-align: center;
+	height: 200px;
+	width: 100px;
+}
+
+/* totally for the header bar at the top */
+.header {
+	color:white;
+	text-align: center;
+    font-family: "NotoSans";
+    font-size: 15px;
+	padding-bottom: 100px;
+	position: relative;
+	z-index: 2;
+}
+
+/* footer, now with 33% more feet. */
+.footer{
+	color: #dfc690;
+    text-align: center;
+    font-family: sans-serif-serif;
+	font-size: 12px;
+	position: relative;
+	z-index: 2;
+}
+
+/* new fancy dropdowns~ */
+select {
+  background-color: #dfdfde;
+  border: thin solid black;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5em;
+  width: 205px;
+  padding: .5em 3.5em .5em .75em;
+
+/* clears out the default arrows. because ew, defaults. */
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* you see that little arrow next to the dropdown...? */
+select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    3em 2.5em;
+  background-repeat: no-repeat;
+}
+
+/* ...click it. you know you want to. */
+select:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+/* clickable radio labels are very much in style. */
+#animRadios label {
+  cursor: pointer;
+  position: relative;
+}
+
+/* nifty gender buttons. yes, they're nifty. */
+#genderRadios label {
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+#genderRadios label img {
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+input[type='radio'] {
+    accent-color: #blue;
+}
+
+/* disappearing gender buttons are also nifty. */
+.disabledButton{
+	opacity: 0.3;
+}
+
+/* in the dragon world, genders have tooltips. */
+#genderRadios label:hover::before {
+  content: attr(for);
+  font-family: 'NotoSans', sans-serif;
+  text-transform: capitalize;
+  font-size: 11px;
+  position: absolute;
+  top: 170%;
+  left: 0;
+  right: 0;
+  opacity: 0.75;
+  background-color: #323232;
+  color: #fff;  
+  padding: 3px;
+  border-radius: 4px;
+  display: block;
+}
+
+/* would you like that giftwrapped? */
+.wrapper {
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+/* (and for those of us at 150% because we can't see...) */
+@media (min-resolution: 125dpi) {
+	.spineCanvas {
+		width: 300%;
+		height: 280%;
+	}
+
+	.flex-container{
+		padding-top: 0px;
+	}
+
+	.footer{
+		font-size: 80%;
+	}
+
+	.header{
+		padding-bottom: 30px;
+	}
+
+	#dragon-image {
+	width: 20%;
+    transform: translate(172%, -123%);
+}
