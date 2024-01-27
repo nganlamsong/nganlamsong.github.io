@@ -36,22 +36,22 @@ a:hover {
     width: 450%;
     height: 400%;
     position: absolute;
-    transform: translate(-50%, -15%);
+    transform: translate(-50%, -32%);
 }
 
 .auraBackCanvas {
-    z-index: -1;
+  z-index: -1;
 }
 
-.dragonCanvas {s
-    z-index: 0;
+.dragonCanvas {
+  z-index: 0;
 }
 
 /* frame. FRAME!!! */
 #dragon-image {
-    position: absolute;
+  position: absolute;
 	width: 20%;
-    transform: translate(172%, -83%);
+  transform: translate(172%, -83%);
 	z-index: 0;
 }
 
@@ -60,46 +60,37 @@ a:hover {
 }
 
 /* why is everything such a pain to center?!? */
-.flex-container{
+.controls-container{
 	color: #c0cc83;
-    text-align: center;
+  text-align: center;
 	font-size: 15px;
 	line-height: 20px;
 	position: relative;
 	z-index: 2;
-	padding-top: 110px;
 }
 
-.grid-container {
-  display: grid;
+.sprite-container {
+  display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
-  height:250px;
+  align-items: center;
 }
 
-.grid-item {
-    position:relative;
-    text-align: center;
-	height: 200px;
-	width: 100px;
+.sprite-container-inner {
+  position: relative;
+  text-align: center;
+	width: 400px;
+  height: 400px;
+  overflow: hidden;
 }
 
 /* totally for the header bar at the top */
 .header {
 	color:white;
 	text-align: center;
-    font-family: "NotoSans";
-    font-size: 15px;
-	padding-bottom: 100px;
-	position: relative;
-	z-index: 2;
-}
-
-/* footer, now with 33% more feet. */
-.footer{
-	color: #dfc690;
-    text-align: center;
-    font-family: sans-serif-serif;
-	font-size: 12px;
+  font-family: "NotoSans";
+  font-size: 15px;
+	margin-bottom: 40px;
 	position: relative;
 	z-index: 2;
 }
@@ -210,10 +201,20 @@ input[type='radio'] {
 /* would you like that giftwrapped? */
 .wrapper {
 	max-width: 90%;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	padding-left: 16px;
 	padding-right: 16px;
+}
+
+/* footer, now with 33% more feet. */
+.footer{
+	color: #dfc690;
+  text-align: center;
+  margin-top: 40;
+  font-family: sans-serif-serif;
+	font-size: 12px;
+	position: relative;
+	z-index: 2;
 }
 
 /* (and for those of us at 150% because we can't see...) */
@@ -221,14 +222,6 @@ input[type='radio'] {
 	.spineCanvas {
 		width: 300%;
 		height: 280%;
-	}
-
-	.flex-container{
-		padding-top: 0px;
-	}
-
-	.footer{
-		font-size: 80%;
 	}
 
 	.header{

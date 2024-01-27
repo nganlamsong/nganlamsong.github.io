@@ -30,7 +30,7 @@ class SpineObject {
         this.skeletonBinary = skeletonBinary;
 
         // Set the scale to apply during parsing, parse the file, and create a new skeleton.
-        this.applyProperScale()
+        this.applyProperScale();
         skeletonBinary.scale = this.skeletonScale;
         var skeletonData = skeletonBinary.readSkeletonData(assetManager.require(this.binaryUrl));
         this.skeleton = new spine.Skeleton(skeletonData);
