@@ -4,31 +4,27 @@
   src: url("https://vega-spica.github.io/Personality-Sneak-Peek-Expanded/fonts/Noto%20Sans%20CJK%20KR%20Bold.ttf") format("truetype");
 }
 
-/*
-and now that you have the cool font, i can force you to use it!
-	unless your device doesn't support it. then you get boring font.
-		that would be sad, wouldn't it?
-*/
 body {
-  font-family: 'NotoSans',sans-serif;
-  text-shadow:2px 2px 4px black;
-  letter-spacing: 0.px;
-  background-color: rgba(47,34,26,1.0);
+  font-family: 'NotoSans', sans-serif;
+  text-shadow: 2px 2px 4px black;
+  background-color: rgba(47, 34, 26, 1.0);
   background-image: url("https://vega-spica.github.io/Personality-Sneak-Peek-Expanded/img/Background.png");
   background-size: 100%;
+  overflow-x: hidden;
 }
 
-a { 
-    color: skyblue;
+a {
+  color: skyblue;
 }
 
-a:link, a:visited {
-    color: skyblue;
+a:link,
+a:visited {
+  color: skyblue;
 }
 
 a:hover {
-    color: #dd4343;
-	cursor: pointer;
+  color: #dd4343;
+  cursor: pointer;
 }
 
 .sprite-container {
@@ -42,16 +38,17 @@ a:hover {
 .sprite-container-inner {
   position: relative;
   text-align: center;
-	width: 100px;
-  height: 200px;
+  width: 300px;
+  height: 450px;
 }
 
 /* hic sunt dracones */
 .spineCanvas {
-  width: 450%;
-  height: 400%;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  transform: translate(-50%, -15%);
+  top: 0;
+  left: 0;
 }
 
 .auraBackCanvas {
@@ -65,9 +62,9 @@ a:hover {
 /* frame. FRAME!!! */
 #dragon-image {
   position: absolute;
-	width: 20%;
+  width: 20%;
   transform: translate(172%, -83%);
-	z-index: 0;
+  z-index: 0;
 }
 
 .auraFrontCanvas {
@@ -75,24 +72,27 @@ a:hover {
 }
 
 /* why is everything such a pain to center?!? */
-.controls-container{
-	color: #c0cc83;
+.controls-container {
+  color: #c0cc83;
+  max-width: 100%;
+  width: 500px;
+  margin: 0 auto;
   text-align: center;
-	font-size: 15px;
-	line-height: 20px;
-	position: relative;
-	z-index: 2;
+  font-size: 15px;
+  line-height: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 /* totally for the header bar at the top */
 .header {
-	color:white;
-	text-align: center;
+  color: white;
+  text-align: center;
   font-family: "NotoSans";
   font-size: 15px;
-	margin-bottom: 40px;
-	position: relative;
-	z-index: 2;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 /* new fancy dropdowns~ */
@@ -107,8 +107,8 @@ select {
   width: 205px;
   padding: .5em 3.5em .5em .75em;
 
-/* clears out the default arrows. because ew, defaults. */
-  margin: 0;      
+  /* clears out the default arrows. because ew, defaults. */
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -172,12 +172,12 @@ select:focus {
 }
 
 input[type='radio'] {
-    accent-color: #blue;
+  accent-color: #blue;
 }
 
 /* disappearing gender buttons are also nifty. */
-.disabledButton{
-	opacity: 0.3;
+.disabledButton {
+  opacity: 0.3;
 }
 
 /* in the dragon world, genders have tooltips. */
@@ -192,7 +192,7 @@ input[type='radio'] {
   right: 0;
   opacity: 0.75;
   background-color: #323232;
-  color: #fff;  
+  color: #fff;
   padding: 3px;
   border-radius: 4px;
   display: block;
@@ -200,35 +200,48 @@ input[type='radio'] {
 
 /* would you like that giftwrapped? */
 .wrapper {
-	max-width: 90%;
-	margin: 0 auto;
-	padding-left: 16px;
-	padding-right: 16px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* footer, now with 33% more feet. */
-.footer{
-	color: #dfc690;
+.footer {
+  color: #dfc690;
   text-align: center;
   margin-top: 40;
   font-family: sans-serif-serif;
-	font-size: 12px;
-	position: relative;
-	z-index: 2;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
 }
 
 /* (and for those of us at 150% because we can't see...) */
 @media (min-resolution: 125dpi) {
-	.spineCanvas {
-		width: 300%;
-		height: 280%;
-	}
+  .spineCanvas {
+    width: 300%;
+    height: 280%;
+  }
 
-	.header{
-		padding-bottom: 30px;
-	}
+  .header {
+    padding-bottom: 30px;
+  }
 
-	#dragon-image {
-	width: 20%;
+  #dragon-image {
+    width: 20%;
     transform: translate(172%, -123%);
+  }
 }
+
+.form-group > label {
+  display: block;
+  font-size: 12px;
+}
+/* 
+@media screen and (max-width: 768px) {
+  .form-group > label {
+    display: block;
+    font-size: small;
+  }
+} */
